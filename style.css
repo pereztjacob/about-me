@@ -6,13 +6,18 @@ h1{
     text-align: center;
     margin-top: 8%;
 }
+/*
 p{
     margin: 3%;
 }
+*/
 .leftUp{
     font-family: monospace;
-    margin: 7%;
+    margin: 5%;
     margin-left: 15%;
     padding: 3%;
     background-color: rgba(229, 229, 229, 0.5);
 }
+section > p{
+    margin: 3%;
+} 
