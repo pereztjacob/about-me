@@ -1,10 +1,12 @@
 'use strict';
 // global tally variable
 var tally = 0;
+// arrays for yes/no answers
+var correctAnsYes = ['yes', 'y', 'yeah', 'ye', 'sure'];
+var correctAnsPowells = ['powells', 'powell\'s', 'powell\'s city of books'];
 // first question
 var answerOne = prompt('Is Portland any fun?');
-if(answerOne.toLowerCase() === 'yes' || answerOne.charAt(0) === 'y'
-    || answerOne.charAt(0) === 'Y'){
+if(correctAnsYes.includes(answerOne.toLowerCase())){
     alert('Yeah, it can be pretty fun.');
     tally++;
 }else if(answerOne.toLowerCase() === ''){
@@ -14,7 +16,7 @@ if(answerOne.toLowerCase() === 'yes' || answerOne.charAt(0) === 'y'
 }
 // second question
 var answerTwo = prompt('Is Jacob allowed to attend the fun things in Portland?');
-if(answerTwo.toLowerCase() === 'yes' || answerTwo.toLowerCase() === 'y'){
+if(correctAnsYes.includes(answerTwo.toLowerCase())){
     alert('No. He\'s too young to get in.');
 }else if(answerTwo.toLowerCase() === ''){
     alert('NO RESPONSE');
@@ -24,7 +26,7 @@ if(answerTwo.toLowerCase() === 'yes' || answerTwo.toLowerCase() === 'y'){
 }
 // third question
 var answerThree = prompt('Does Jacob have houseplants?');
-if(answerThree.toLowerCase() === 'yes' || answerThree.toLowerCase() === 'y'){
+if(correctAnsYes.includes(answerThree.toLowerCase())){
     alert('You\'re right, he\'s got one.');
     tally++;
 }else if(answerThree.toLowerCase() === ''){
@@ -34,7 +36,7 @@ if(answerThree.toLowerCase() === 'yes' || answerThree.toLowerCase() === 'y'){
 }
 // fourth question
 var answerFour = prompt('Can Jacob watch four horror movies in a row?');
-if(answerFour.toLowerCase() === 'yes' || answerFour.toLowerCase() === 'y'){
+if(correctAnsYes.includes(answerFour.toLowerCase())){
     alert('He hasn\'t proven that yet but he will keep trying.');
 }else if(answerFour.toLowerCase() === ''){
     alert('NO RESPONSE');
@@ -44,8 +46,7 @@ if(answerFour.toLowerCase() === 'yes' || answerFour.toLowerCase() === 'y'){
 }
 // fifth question
 var answerFive = prompt('What \' s Jacob \' s favorite book store in Portland?');
-if(answerFive.toLowerCase() === 'Powell\'s' || answerFive.toLowerCase() === 'Powell\'s City of Books'
-    || answerFive.toLowerCase() === 'powells' || answerFive.toLowerCase() === 'powell\'s'){
+if(correctAnsPowells.includes(answerFive.toLowerCase())){
     alert('Yes.');
     tally++;
 }else if(answerFive.toLowerCase() === ''){
@@ -76,11 +77,11 @@ if(answerSix != 6){
 // seventh question: compares string input to contents of array, responds accordingly
 var answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
 var favGenres = ['folk', 'punk', 'blues', 'ambient'];
-if(!favGenres.includes(answerSeven)){
+if(!favGenres.includes(answerSeven.toLowerCase())){
     for(var r = 0; r < 6; r++){
         alert('Try again, ' + (5 - r) + ' guess(es) left.');
         answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
-        if(favGenres.includes(answerSeven)){
+        if(favGenres.includes(answerSeven.toLowerCase())){
             alert('That\'s one of them!');
             tally++;
             break;
