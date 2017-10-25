@@ -55,13 +55,14 @@ if(correctAnsPowells.includes(answerFive.toLowerCase())){
     alert('No.');
 }
 // sixth question: evaluates numerical input, responds accordingly
+var correctNum = Math.floor(Math.random() * 10);
 var answerSix = prompt('How many hours of sleep does Jacob get on average?');
-if(answerSix != 6){
+if(answerSix != correctNum){
     for(var i = 0; i < 6; i++){
-        if(answerSix < 6){
+        if(answerSix < correctNum){
             alert('higher. ' + (5 - i) + ' guess(es) left.');
             answerSix = prompt('How many hours of sleep does Jacob get on average?');
-        }else if (answerSix > 6){
+        }else if (answerSix > correctNum){
             alert('lower. ' + (5 - i) + ' guess(es) left.');
             answerSix = prompt('How many hours of sleep does Jacob get on average?');
         }else{
