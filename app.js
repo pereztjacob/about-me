@@ -26,7 +26,7 @@ for(var i = 0; i < 5; i++){
     }
 }
 // sixth question: evaluates numerical input, responds accordingly
-var correctNum = Math.floor(Math.random() * 10);
+var correctNum = Math.floor(Math.random() * 12);
 var answerSix = prompt('How many hours of sleep does Jacob get on average?');
 if(answerSix != correctNum){
     for(var m = 0; m < 6; m++){
