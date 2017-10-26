@@ -1,7 +1,7 @@
 'use strict';
-var tally = 0;
+let tally = 0;
 // Question one
-var answerOne = prompt('Is Portland any fun?');
+const answerOne = prompt('Is Portland any fun?');
 if(answerOne.toLowerCase() === 'yes' || answerOne.charAt(0) === 'y'
     || answerOne.charAt(0) === 'Y'){
     alert('Yeah, it can be pretty fun.');
@@ -12,7 +12,7 @@ if(answerOne.toLowerCase() === 'yes' || answerOne.charAt(0) === 'y'
     alert('I think it is sometimes.');
 }
 // Question two
-var answerTwo = prompt('Is Jacob allowed to attend the fun things in Portland?');
+const answerTwo = prompt('Is Jacob allowed to attend the fun things in Portland?');
 if(answerTwo.toLowerCase() === 'yes' || answerTwo.toLowerCase() === 'y'){
     alert('No. He\'s too young to get in.');
 }else if(answerTwo.toLowerCase() === ''){
@@ -22,7 +22,7 @@ if(answerTwo.toLowerCase() === 'yes' || answerTwo.toLowerCase() === 'y'){
     tally++;
 }
 // Question three
-var answerThree = prompt('Does Jacob have houseplants?');
+const answerThree = prompt('Does Jacob have houseplants?');
 if(answerThree.toLowerCase() === 'yes' || answerThree.toLowerCase() === 'y'){
     alert('You\'re right, he\'s got one.');
     tally++;
@@ -32,7 +32,7 @@ if(answerThree.toLowerCase() === 'yes' || answerThree.toLowerCase() === 'y'){
     alert('No, he has one.');
 }
 // Question four
-var answerFour = prompt('Can Jacob watch four horror movies in a row?');
+const answerFour = prompt('Can Jacob watch four horror movies in a row?');
 if(answerFour.toLowerCase() === 'yes' || answerFour.toLowerCase() === 'y'){
     alert('He hasn\'t proven that yet but he will keep trying.');
 }else if(answerFour.toLowerCase() === ''){
@@ -42,7 +42,7 @@ if(answerFour.toLowerCase() === 'yes' || answerFour.toLowerCase() === 'y'){
     tally++;
 }
 // Question five
-var answerFive = prompt('What\'s Jacob\'s favorite book store in Portland?');
+const answerFive = prompt('What\'s Jacob\'s favorite book store in Portland?');
 if(answerFive.toLowerCase() === 'Powell\'s' || answerFive.toLowerCase() === 'Powell\'s City of Books'
     || answerFive.toLowerCase() === 'powells'){
     alert('Yes.');
@@ -53,10 +53,10 @@ if(answerFive.toLowerCase() === 'Powell\'s' || answerFive.toLowerCase() === 'Pow
     alert('No.');
 }
 // sixth question: evaluates numerical input, responds accordingly
-var correctNum = Math.floor(Math.random() * 12);
-var answerSix = prompt('How many hours of sleep does Jacob get on average?');
+const correctNum = Math.floor(Math.random() * 12);
+const answerSix = prompt('How many hours of sleep does Jacob get on average?');
 if(answerSix != correctNum){
-    for(var m = 0; m < 6; m++){
+    for(let m = 0; m < 6; m++){
         if(answerSix < correctNum){
             alert('higher. ' + (5 - m) + ' guess(es) left.');
             answerSix = prompt('How many hours of sleep does Jacob get on average?');
@@ -74,8 +74,8 @@ if(answerSix != correctNum){
     tally++;
 }
 // seventh question: compares string input to contents of array, responds accordingly
-var answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
-var favGenres = ['folk', 'punk', 'blues', 'ambient'];
+const answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
+const favGenres = ['folk', 'punk', 'blues', 'ambient'];
 if(!favGenres.includes(answerSeven.toLowerCase())){
     for(var r = 0; r < 6; r++){
         alert('Try again, ' + (5 - r) + ' guess(es) left.');
