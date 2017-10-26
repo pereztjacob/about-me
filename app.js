@@ -2,68 +2,39 @@
 // global tally variable
 var tally = 0;
 // arrays for yes/no answers
-var correctAnsYes = ['yes', 'y', 'yeah', 'ye', 'sure'];
-var correctAnsPowells = ['powells', 'powell\'s', 'powell\'s city of books'];
-// first question
-var answerOne = prompt('Is Portland any fun?');
-if(correctAnsYes.includes(answerOne.toLowerCase())){
-    alert('Yeah, it can be pretty fun.');
-    tally++;
-}else if(answerOne.toLowerCase() === ''){
-    alert('NO RESPONSE');
-}else{
-    alert('I think it is sometimes.');
-}
-// second question
-var answerTwo = prompt('Is Jacob allowed to attend the fun things in Portland?');
-if(correctAnsYes.includes(answerTwo.toLowerCase())){
-    alert('No. He\'s too young to get in.');
-}else if(answerTwo.toLowerCase() === ''){
-    alert('NO RESPONSE');
-}else{
-    alert(':(');
-    tally++;
-}
-// third question
-var answerThree = prompt('Does Jacob have houseplants?');
-if(correctAnsYes.includes(answerThree.toLowerCase())){
-    alert('You\'re right, he\'s got one.');
-    tally++;
-}else if(answerThree.toLowerCase() === ''){
-    alert('NO RESPONSE');
-}else{
-    alert('No, he has one.');
-}
-// fourth question
-var answerFour = prompt('Can Jacob watch four horror movies in a row?');
-if(correctAnsYes.includes(answerFour.toLowerCase())){
-    alert('He hasn\'t proven that yet but he will keep trying.');
-}else if(answerFour.toLowerCase() === ''){
-    alert('NO RESPONSE');
-}else{
-    alert('You\'re right but it\'s a work in progress.');
-    tally++;
-}
-// fifth question
-var answerFive = prompt('What \' s Jacob \' s favorite book store in Portland?');
-if(correctAnsPowells.includes(answerFive.toLowerCase())){
-    alert('Yes.');
-    tally++;
-}else if(answerFive.toLowerCase() === ''){
-    alert('NO RESPONSE');
-}else{
-    alert('No.');
+var questions = ['Is Portland any fun?', 'Is Jacob allowed to attend the fun things in Portland?',
+    'Does Jacob have houseplants?', 'Can Jacob watch four horror movies in a row?',
+    'What\'s Jacob\'s favorite book store in Portland?'];
+var correctAns = ['yes', 'y', 'yeah', 'ye', 'sure', 'powells', 'powell\'s', 'powell\'s city of books'];
+var responsesPos = ['Yeah, it can be pretty fun', 'No. He\'s too young to get in.', 'You\'re right, he has one',
+    'He hasn\'t proven that but he\'s working on it', 'Yes.'];
+var responsesNeg = ['I think it is sometimes.', ':(', 'No, he has one',
+    'You\'re right but it\'s a work in progress', 'No.'];
+// questions 1-5 in array form
+for(var i = 0; i < 5; i++){
+    var answer = prompt(questions[i]);
+    if(correctAns.includes(answer.toLowerCase())){
+        alert(responsesPos[i]);
+        if(i === 0 || i === 2 || i === 4){
+            tally++;
+        }
+    }else{
+        alert(responsesNeg[i]);
+        if(i === 1 || i === 3){
+            tally++;
+        }
+    }
 }
 // sixth question: evaluates numerical input, responds accordingly
 var correctNum = Math.floor(Math.random() * 10);
 var answerSix = prompt('How many hours of sleep does Jacob get on average?');
 if(answerSix != correctNum){
-    for(var i = 0; i < 6; i++){
+    for(var m = 0; m < 6; m++){
         if(answerSix < correctNum){
-            alert('higher. ' + (5 - i) + ' guess(es) left.');
+            alert('higher. ' + (5 - m) + ' guess(es) left.');
             answerSix = prompt('How many hours of sleep does Jacob get on average?');
         }else if (answerSix > correctNum){
-            alert('lower. ' + (5 - i) + ' guess(es) left.');
+            alert('lower. ' + (5 - m) + ' guess(es) left.');
             answerSix = prompt('How many hours of sleep does Jacob get on average?');
         }else{
             alert('Correct!');
@@ -94,11 +65,11 @@ if(!favGenres.includes(answerSeven.toLowerCase())){
 }
 // tells user how many questions they answered correctly
 if(tally === 7){
-    alert('Your score is: ' + tally + '. You are an expert on Jacob');
+    alert('Your score is: ' + tally + '. You are an expert on Jacob.');
 }else if(tally >= 5){
     alert('Your score is: ' + tally + '. You pass this test.');
 }else if(tally < 5){
     alert('Your score is: ' + tally + '. Keep studying.');
 }else if(tally === 0){
     alert('Your score is: ' + tally + '. You do not know me.');
-}
+} 
