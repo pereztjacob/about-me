@@ -1,7 +1,7 @@
 'use strict';
 // global tally variable
 var tally = 0;
-// arrays for yes/no answers
+// arrays for questions, answers, and responses
 var questions = ['Is Portland any fun?', 'Is Jacob allowed to attend the fun things in Portland?',
     'Does Jacob have houseplants?', 'Can Jacob watch four horror movies in a row?',
     'What\'s Jacob\'s favorite book store in Portland?'];
