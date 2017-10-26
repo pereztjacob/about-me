@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var tally = 0;
 // Question one
 var answerOne = prompt('Is Portland any fun?');
@@ -14,17 +14,17 @@ if(answerOne.toLowerCase() === 'yes' || answerOne.charAt(0) === 'y'
 // Question two
 var answerTwo = prompt('Is Jacob allowed to attend the fun things in Portland?');
 if(answerTwo.toLowerCase() === 'yes' || answerTwo.toLowerCase() === 'y'){
-    alert("No. He's too young to get in.");
+    alert('No. He\'s too young to get in.');
 }else if(answerTwo.toLowerCase() === ''){
     alert('NO RESPONSE');
 }else{
-    alert(":(");
+    alert(':(');
     tally++;
 }
 // Question three
 var answerThree = prompt('Does Jacob have houseplants?');
 if(answerThree.toLowerCase() === 'yes' || answerThree.toLowerCase() === 'y'){
-    alert("You're right, he's got one.");
+    alert('You\'re right, he\'s got one.');
     tally++;
 }else if(answerThree.toLowerCase() === ''){
     alert('NO RESPONSE');
@@ -34,17 +34,17 @@ if(answerThree.toLowerCase() === 'yes' || answerThree.toLowerCase() === 'y'){
 // Question four
 var answerFour = prompt('Can Jacob watch four horror movies in a row?');
 if(answerFour.toLowerCase() === 'yes' || answerFour.toLowerCase() === 'y'){
-    alert("He hasn't proven that yet but he will keep trying.");
+    alert('He hasn\'t proven that yet but he will keep trying.');
 }else if(answerFour.toLowerCase() === ''){
     alert('NO RESPONSE');
 }else{
-    alert("You're right but it's a work in progress.");
+    alert('You\'re right but it\'s a work in progress.');
     tally++;
 }
 // Question five
-var answerFive = prompt("What's Jacob's favorite book store in Portland?");
-if(answerFive.toLowerCase() === "Powell's" || answerFive.toLowerCase() === "Powell's City of Books"
-    || answerFive.toLowerCase() === "powells"){
+var answerFive = prompt('What\'s Jacob\'s favorite book store in Portland?');
+if(answerFive.toLowerCase() === 'Powell\'s' || answerFive.toLowerCase() === 'Powell\'s City of Books'
+    || answerFive.toLowerCase() === 'powells'){
     alert('Yes.');
     tally++;
 }else if(answerFive.toLowerCase() === ''){
@@ -90,3 +90,13 @@ if(!favGenres.includes(answerSeven.toLowerCase())){
     alert('That\'s one of them!');
     tally++;
 }
+// tells user how many questions they answered correctly
+if(tally === 7){
+    alert('Your score is: ' + tally + '. You are an expert on Jacob.');
+}else if(tally >= 5){
+    alert('Your score is: ' + tally + '. You pass this test.');
+}else if(tally < 5){
+    alert('Your score is: ' + tally + '. Keep studying.');
+}else if(tally === 0){
+    alert('Your score is: ' + tally + '. You do not know me.');
+} 
