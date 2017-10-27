@@ -1,18 +1,18 @@
 'use strict';
 // global tally variable
-var tally = 0;
+let tally = 0;
 // arrays for questions, answers, and responses
-var questions = ['Is Portland any fun?', 'Is Jacob allowed to attend the fun things in Portland?',
+const questions = ['Is Portland any fun?', 'Is Jacob allowed to attend the fun things in Portland?',
     'Does Jacob have houseplants?', 'Can Jacob watch four horror movies in a row?',
     'What\'s Jacob\'s favorite book store in Portland?'];
-var correctAns = ['yes', 'y', 'yeah', 'ye', 'sure', 'powells', 'powell\'s', 'powell\'s city of books'];
-var responsesPos = ['Yeah, it can be pretty fun', 'No. He\'s too young to get in.', 'You\'re right, he has one',
+const correctAns = ['yes', 'y', 'yeah', 'ye', 'sure', 'powells', 'powell\'s', 'powell\'s city of books'];
+const responsesPos = ['Yeah, it can be pretty fun', 'No. He\'s too young to get in.', 'You\'re right, he has one',
     'He hasn\'t proven that but he\'s working on it', 'Yes.'];
-var responsesNeg = ['I think it is sometimes.', ':(', 'No, he has one',
+const responsesNeg = ['I think it is sometimes.', ':(', 'No, he has one',
     'You\'re right but it\'s a work in progress', 'No.'];
 // questions 1-5 in array form
-for(var i = 0; i < 5; i++){
-    var answer = prompt(questions[i]);
+for(let i = 0; i < 5; i++){
+    const answer = prompt(questions[i]);
     if(correctAns.includes(answer.toLowerCase())){
         alert(responsesPos[i]);
         if(i === 0 || i === 2 || i === 4){
@@ -26,10 +26,10 @@ for(var i = 0; i < 5; i++){
     }
 }
 // sixth question: evaluates numerical input, responds accordingly
-var correctNum = Math.floor(Math.random() * 12);
-var answerSix = prompt('How many hours of sleep does Jacob get on average?');
+const correctNum = Math.floor(Math.random() * 12);
+const answerSix = prompt('How many hours of sleep does Jacob get on average?');
 if(answerSix != correctNum){
-    for(var m = 0; m < 6; m++){
+    for(let m = 0; m < 6; m++){
         if(answerSix < correctNum){
             alert('higher. ' + (5 - m) + ' guess(es) left.');
             answerSix = prompt('How many hours of sleep does Jacob get on average?');
@@ -47,10 +47,10 @@ if(answerSix != correctNum){
     tally++;
 }
 // seventh question: compares string input to contents of array, responds accordingly
-var answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
-var favGenres = ['folk', 'punk', 'blues', 'ambient'];
+const answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
+const favGenres = ['folk', 'punk', 'blues', 'ambient'];
 if(!favGenres.includes(answerSeven.toLowerCase())){
-    for(var r = 0; r < 6; r++){
+    for(let r = 0; r < 6; r++){
         alert('Try again, ' + (5 - r) + ' guess(es) left.');
         answerSeven = prompt('What\'s one of Jacob\'s favorite genres of music?');
         if(favGenres.includes(answerSeven.toLowerCase())){
